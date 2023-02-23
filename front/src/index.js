@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import {
   createBrowserRouter,
   RouterProvider
@@ -9,6 +9,7 @@ import {
 import ErrorPage from './routes/ErrorPage';
 import Settings from './routes/Settings';
 import About from './routes/About';
+import Home from './routes/Home';
 
 const Global = createGlobalStyle`
 * {
@@ -18,7 +19,6 @@ const Global = createGlobalStyle`
   font-family: consolas;
 }
 `
-
 const router = createBrowserRouter([
   {
     path: '/',
@@ -26,8 +26,12 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
+        index: true,
+        element: <Home />
+      },
+      {
         path: 'settings',
-        element: <Settings />
+        element: <Settings />,
       },
       {
         path: 'about',
@@ -36,6 +40,7 @@ const router = createBrowserRouter([
     ]
   }
 ]);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
