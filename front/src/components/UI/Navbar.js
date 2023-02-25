@@ -8,7 +8,7 @@ const Wrapper = styled.div`
 display: grid;
 grid-template-columns: auto 1fr;
 align-items: center;
-column-gap: 15px;
+column-gap: 1em;
 `
 
 const Navbar = () => {

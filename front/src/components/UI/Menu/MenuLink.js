@@ -5,7 +5,7 @@ import { useContext } from "react";
 const StyledLink = styled(NavLink)`
 color: ${props => props.$textColor};
 transition: all .2s ease;
-font-size: 20px;
+font-size: 1.2rem;
 display: flex;
 align-items: end;
 justify-content: center;
@@ -14,6 +14,9 @@ justify-content: center;
 }
 &:hover {
   color: ${props => props.$activeColor}
+}
+@media (max-width: 768px) {
+  font-size: 1rem;
 }
 `
 

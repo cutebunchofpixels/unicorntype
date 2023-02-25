@@ -6,10 +6,21 @@ import themes from "./utils/Themes/themes";
 import Navbar from "./components/UI/Navbar";
 
 const Container = styled.div`
-padding: 2% 10% 2% 10%;
+padding: 2em 10em 2em 10em;
 background-color: ${props => props.bgColor};
 min-height: 100vh;
-transition: all .5s ease-in;
+transition: background-color .5s ease-in;
+@media (max-width: 1024px) {
+  padding: 2em 5em 2em 5em;
+}
+
+@media (max-width: 768px) {
+  padding: 2em 3em 2em 3em;
+}
+
+@media (max-width: 425px) {
+  padding: 2em 1em 2em 1em;
+}
 `
 
 function App() {
