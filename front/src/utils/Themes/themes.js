@@ -3,8 +3,8 @@ const ninetyNine = {
     colors: {
         bg: "#EEEBE2",
         text: "#C0BCAC",
-        accent: "#99947F",
-        logo: "#99947F"
+        accent: "#080909",
+        logo: "#080909"
     }
 };
 
