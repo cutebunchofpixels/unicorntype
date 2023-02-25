@@ -6,8 +6,9 @@ const StyledLink = styled(NavLink)`
 color: ${props => props.$textColor};
 transition: all .2s ease;
 font-size: 1.2rem;
+width: 1em;
 display: flex;
-align-items: end;
+align-items: center;
 justify-content: center;
 &.active {
   color: ${props => props.$activeColor}

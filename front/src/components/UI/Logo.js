@@ -31,20 +31,17 @@ color: ${props => props.textColor};
 @media (max-width: 768px) {
   font-size: 0.5rem;
 }
-@media (max-width: 425px) {
-  display: none;
-}
 `
 
 const Logo = () => {
   const theme = useContext(ThemeContext);
-  
+
   return (
     <Wrapper logoColor={theme.colors.logo}>
-        <Top textColor={theme.colors.text}>
-            unicorn see
-        </Top>
-        unicorntype
+      <Top textColor={theme.colors.text}>
+        unicorn see
+      </Top>
+      unicorntype
     </Wrapper>
   )
 };
