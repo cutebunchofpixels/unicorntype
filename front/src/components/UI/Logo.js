@@ -1,7 +1,5 @@
 import styled from "styled-components";
 import Raleway from "../../media/fonts/raleway/Raleway-VariableFont_wght.ttf";
-import { ThemeContext } from "styled-components";
-import { useContext } from "react";
 
 const Wrapper = styled.div`
 font-size: 2rem;
@@ -9,7 +7,8 @@ font-family: raleway;
 font-weight: 500;
 text-transform: uppercase;
 position: relative;
-color: ${props => props.logoColor};
+transition: color ${props => props.theme.utils.transitionSpeed};
+color: ${props => props.theme.colors.logo};
 @font-face {
     font-family: "raleway";
     src: url(${Raleway});
@@ -27,18 +26,15 @@ font-size: 0.6rem;
 font-weight: 400;
 position: absolute;
 transform: translateY(-0.3em);
-color: ${props => props.textColor};
+color: ${props => props.theme.colors.text};
 @media (max-width: 768px) {
   font-size: 0.5rem;
 }
 `
-
 const Logo = () => {
-  const theme = useContext(ThemeContext);
-
   return (
-    <Wrapper logoColor={theme.colors.logo}>
-      <Top textColor={theme.colors.text}>
+    <Wrapper>
+      <Top>
         unicorn see
       </Top>
       unicorntype

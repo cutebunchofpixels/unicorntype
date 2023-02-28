@@ -1,15 +1,14 @@
-import { useContext } from "react";
-import styled, { ThemeContext } from "styled-components";
+import styled from "styled-components";
 
 const Wrapper = styled.button`
 background-color: transparent;
 font-size: 1.2rem;
 width: 1em;
 border: none;
-transition: all .2s ease;
-color: ${props => props.textColor};
+transition: color ${props => props.theme.utils.transitionSpeed};
+color: ${props => props.theme.colors.text};
 &:hover {
-  color: ${props => props.$activeColor};
+  color: ${props => props.theme.colors.accent};
   cursor: pointer;
 }
 @media (max-width: 768px) {
@@ -17,10 +16,9 @@ color: ${props => props.textColor};
 }
 `
 const MenuButton = ({ children, ...props }) => {
-  const theme = useContext(ThemeContext);
 
   return (
-    <Wrapper activeColor={theme.colors.accent} textColor={theme.colors.text} {...props}>
+    <Wrapper {...props}>
       {children}
     </Wrapper>
   )
