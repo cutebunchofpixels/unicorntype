@@ -3,6 +3,7 @@ import styled from "styled-components";
 const Wrapper = styled.input`
 width: 100%;
 font-size: 1em;
+font-family: inherit;
 background-color: ${props => props.theme.colors.bg};
 transition:
  background-color ${props => props.theme.utils.transitionSpeed},

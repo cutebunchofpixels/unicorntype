@@ -11,12 +11,12 @@ import Settings from './routes/Settings';
 import About from './routes/About';
 import Home from './routes/Home';
 
+
 const Global = createGlobalStyle`
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: consolas;
 }
 `
 const router = createBrowserRouter([

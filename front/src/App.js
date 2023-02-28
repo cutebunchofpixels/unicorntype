@@ -3,12 +3,18 @@ import styled, { ThemeProvider } from "styled-components";
 import { createContext, useState } from "react";
 import themes from "./utils/Themes/themes";
 import Navbar from "./components/UI/Navbar";
+import Inconsolata from "./media/fonts/inconsolata/Inconsolata-VariableFont_wdth,wght.ttf"
 
 const Container = styled.div`
 padding: 2em 10em 2em 10em;
 background-color: ${props => props.theme.colors.bg};
 min-height: 100vh;
 transition: background-color ${props => props.theme.utils.transitionSpeed};
+font-family: Inconsolata;
+  @font-face {
+    font-family: "Inconsolata";
+    src: url(${Inconsolata});
+  }
 @media (max-width: 1024px) {
   padding: 2em 5em 2em 5em;
 }
