@@ -40,18 +40,23 @@ const lilDragon = {
     }
 }
 
-const binsu = {
+const bingsu = {
     name: "bingsu",
     colors: {
         bg: "#B8A7AA",
         text: "#48373D",
         accent: "#EBE6EA",
-        logo: "#EBE6EA"
+        logo: "#EBE6EA",
+        correct: "#EBE6EA",
+        incorrect: "#921341"
     },
     utils: {
-        transitionSpeed: ".25s",
+        transitionSpeed: "0.25s",
         roundness: "1rem"
     }
 }
-const themes = [ninetyNine, arch, lilDragon, binsu];
+const themes = [bingsu, ninetyNine, arch, lilDragon];
+const previewColors = ["accent", "text", "logo"];
+
 export default themes;
+export { previewColors };

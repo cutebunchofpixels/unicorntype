@@ -1,8 +1,16 @@
+import styled from "styled-components";
+import TypingTest from "../components/TypingTest";
+
+const Wrapper = styled.div`
+display: grid;
+place-items: center;
+`
+
 const Home = () => {
   return (
-    <div>
-      Soon there will be the typing thingy
-    </div>
+    <Wrapper>
+      <TypingTest />
+    </Wrapper>
   )
 };
 

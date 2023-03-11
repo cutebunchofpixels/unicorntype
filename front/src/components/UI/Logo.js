@@ -1,17 +1,12 @@
 import styled from "styled-components";
-import Manrope from "../../media/fonts/manrope/Manrope-VariableFont_wght.ttf"
 
 const Wrapper = styled.div`
 font-size: 2rem;
-font-family: Manrope;
+font-family: "Manrope";
 font-weight: 600;
 position: relative;
 transition: color ${props => props.theme.utils.transitionSpeed};
 color: ${props => props.theme.colors.logo};
-@font-face {
-    font-family: "Manrope";
-    src: url(${Manrope});
-}
 @media (max-width: 768px) {
   font-size: 1.7rem
 }

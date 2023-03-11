@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import styled from "styled-components";
 import { SetThemeContext } from "../../../App";
+import { previewColors } from "../../../utils/Themes/themes";
 
 const Wrapper = styled.div`
 display: grid;
@@ -39,8 +40,11 @@ const ThemeOption = ({ theme }) => {
     <Wrapper onClick={() => setCurrentTheme(theme)}>
       <div>{theme.name}</div>
       <ThemePreview bgColor={theme.colors.bg}>
-        {Object.entries(theme.colors).map((c) => {
+        {/* {Object.entries(theme.colors).map((c) => {
           return (c[0] !== "bg") && <ThemeIcon $color={c[1]} key={c[0]} />
+        })} */}
+        {previewColors.map(c => {
+          return <ThemeIcon $color={theme.colors[c]} key={c} />
         })}
       </ThemePreview>
     </Wrapper>

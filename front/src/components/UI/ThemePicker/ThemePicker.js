@@ -16,21 +16,21 @@ color: ${props => props.theme.colors.text}
 `
 
 const ThemePicker = () => {
-    const [themeSearch, setThemeSearch] = useState("");
+  const [themeSearch, setThemeSearch] = useState("");
 
-    return (<div>
-        <SearchWrapper>
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
-            <CustomInput
-            placeholder="Type here to search"
-            value={themeSearch}
-            onChange = {(e) => setThemeSearch(e.target.value)}/>
-        </SearchWrapper>
-        {themes.map(t => {
-            return (themeSearch === "" || t.name.toLowerCase().includes(themeSearch)) &&
-            <ThemeOption theme={t} key={t.name} /> 
-        })}
-    </div>)
+  return (<div>
+    <SearchWrapper>
+      <FontAwesomeIcon icon={faMagnifyingGlass} />
+      <CustomInput
+        placeholder="Type here to search"
+        value={themeSearch}
+        onChange={(e) => setThemeSearch(e.target.value)} />
+    </SearchWrapper>
+    {themes.map(t => {
+      return (themeSearch === "" || t.name.toLowerCase().includes(themeSearch)) &&
+        <ThemeOption theme={t} key={t.name} />
+    })}
+  </div>)
 };
 
 export default ThemePicker;

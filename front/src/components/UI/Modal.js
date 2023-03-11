@@ -17,6 +17,7 @@ transition: opacity .3s ease-in;
     pointer-events: all;
     opacity: 1;
 }
+z-index: 998;
 `
 const ContentWrapper = styled.div`
 border-radius: ${props => props.theme.utils.roundness};
@@ -31,6 +32,7 @@ transition: transform .3s,
 &.active {
     transform: scale(1);
 }
+z-index: 999;
 `
 
 const Modal = ({ active, setActive, children }) => {
