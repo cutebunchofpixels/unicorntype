@@ -11,7 +11,6 @@ import Settings from './routes/Settings';
 import About from './routes/About';
 import Home from './routes/Home';
 
-
 const Global = createGlobalStyle`
 * {
   margin: 0;
@@ -43,8 +42,8 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <>
     <Global />
     <RouterProvider router={router} />
-  </React.StrictMode>
+  </>
 );

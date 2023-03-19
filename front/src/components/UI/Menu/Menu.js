@@ -5,7 +5,7 @@ import { faInfo } from "@fortawesome/free-solid-svg-icons";
 import { faScrewdriverWrench } from "@fortawesome/free-solid-svg-icons";
 import { faPalette } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
-import MenuButton from "./MenuButton";
+import IconButton from "../button/IconButton";
 import { useState } from "react";
 import Modal from "../Modal";
 import ThemePicker from "../ThemePicker/ThemePicker";
@@ -31,9 +31,9 @@ const Menu = () => {
             <MenuLink to="/settings">
                 <FontAwesomeIcon icon={faScrewdriverWrench} />
             </MenuLink>
-            <MenuButton onClick={() => setThemePickerVisible(true)}>
+            <IconButton onClick={() => setThemePickerVisible(true)}>
                 <FontAwesomeIcon icon={faPalette}/>
-            </MenuButton>
+            </IconButton>
             <Modal active={isThemePickerVisible} setActive={setThemePickerVisible}>
                 <ThemePicker />
             </Modal>

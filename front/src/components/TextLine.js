@@ -1,5 +1,14 @@
 import { useRef, useState } from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const caretFlash = keyframes`
+0%, 100% {
+  opacity: 0;
+}
+50% {
+  opacity: 1;
+}
+`
 
 const Letter = styled.span`
 transition: all 0.125s ease-out ;
@@ -21,11 +30,8 @@ position: absolute;
 z-index: 2;
 opacity: 0;
 cursor: default;
-border: none;
-&:focus {
-  outline: none;
-  border: none;
-}
+top: 0;
+left: 0;
 `
 
 const Caret = styled.div`
@@ -37,13 +43,16 @@ z-index: 2;
 background-color: ${props => props.theme.colors.accent};
 transition: left 0.125s ease-out;
 border-radius: ${props => props.theme.utils.roundness};
+animation: ${props => props.animationFrames} 1s linear infinite;
 `
 
-const TextLine = ({ text, handleEndOfLine }) => {
+const TextLine = ({ text, active, handleEndOfLine }) => {
   const charsRef = useRef(null);
+  const inputRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [caretX, setCaretX] = useState(0);
   const [userInput, setUserInput] = useState("");
+  
 
   function getRefMap() {
     if (!charsRef.current) {
@@ -81,11 +90,19 @@ const TextLine = ({ text, handleEndOfLine }) => {
     setUserInput(e.target.value);
   }
 
+  if (active) {
+    inputRef.current.focus();
+  }
+
   return (
     <div>
-      <Caret style={{ left: `${caretX}px` }} />
+      <Caret
+      animationFrames={(active) ? "none" : caretFlash}
+      style={{ left: `${caretX}px` }}
+      />
       <TextInput
         onInput={handleInput}
+        ref={inputRef}
       />
       {text.split('').map((c, ind) => {
         return <Letter

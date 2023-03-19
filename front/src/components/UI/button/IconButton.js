@@ -15,7 +15,7 @@ color: ${props => props.theme.colors.text};
   font-size: 1rem;
 }
 `
-const MenuButton = ({ children, ...props }) => {
+const IconButton = ({ children, ...props }) => {
 
   return (
     <Wrapper {...props}>
@@ -24,4 +24,4 @@ const MenuButton = ({ children, ...props }) => {
   )
 };
 
-export default MenuButton;
+export default IconButton;
