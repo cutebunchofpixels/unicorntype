@@ -1,6 +1,6 @@
 import TextLine from "./TextLine";
 import IconButton from "./UI/button/IconButton";
-import { faPlay } from "@fortawesome/free-solid-svg-icons";
+import { faPlay, faRotate } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import Timer from "./Timer";
@@ -44,6 +44,8 @@ const TestField = ({ testState, setTestState, duration }) => {
         style={{ alignSelf: "center" }}
       >
         <FontAwesomeIcon icon={faPlay} />
+        /
+        <FontAwesomeIcon icon={faRotate}/>
       </IconButton>
     </>
   )

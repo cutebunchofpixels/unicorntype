@@ -3,7 +3,8 @@ import styled from "styled-components";
 const Wrapper = styled.button`
 background-color: transparent;
 font-size: 1.2rem;
-width: 1em;
+display: flex;
+gap: 0.5em;
 border: none;
 transition: color ${props => props.theme.utils.transitionSpeed};
 color: ${props => props.theme.colors.text};
