@@ -4,6 +4,7 @@ import { faPlay, faRotate } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import Timer from "./Timer";
+import { useLayoutEffect, useState } from "react";
 
 const TextWrapper = styled.div`
 font-size: 28px;
@@ -19,6 +20,20 @@ margin-bottom: 1em;
 
 const TestField = ({ testState, setTestState, duration }) => {
   let testStateTimeout;
+  const [lineCharactersCount, setLineCharactersCount] = useState(0);
+
+  function getCharacterCount(fontSize) {
+    let testWrapper = document.getElementById("test-wrapper");
+    let style = getComputedStyle(testWrapper);
+    fontSize /= 2;
+    setLineCharactersCount(Math.floor(parseInt(style.width) / fontSize));
+  }
+
+  useLayoutEffect(() => {
+    const handleResize = getCharacterCount.bind(window, 28);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   if (testState) {
     testStateTimeout = setTimeout(function() {

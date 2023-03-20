@@ -12,7 +12,7 @@ position: relative;
 const TypingTest = () => {
   const [testState, setTestState] = useState(0);
   return (
-    <TestWrapper>
+    <TestWrapper id="test-wrapper">
       {(testState < 2)
       ? <TestField 
       testState={testState}
