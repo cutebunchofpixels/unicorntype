@@ -4,7 +4,9 @@ const ninetyNine = {
         bg: "#EEEBE2",
         text: "#C0BCAC",
         accent: "#080909",
-        logo: "#080909"
+        logo: "#080909",
+        correct: "#080909",
+        incorrect: "#ca847a"
     },
     utils: {
         transitionSpeed: ".25s",
@@ -18,7 +20,9 @@ const arch = {
         bg: "#0C0D11",
         text: "#454864",
         accent: "#7EBAB5",
-        logo: "#F6F5F5"
+        logo: "#F6F5F5",
+        correct: "#f6f5f5",
+        incorrect: "#ff4754"
     },
     utils: {
         transitionSpeed: ".25s",
@@ -32,7 +36,9 @@ const lilDragon = {
         bg: "#EBE1EF",
         text: "#A28DB8",
         accent: "#8A5BD6",
-        logo: "#212B43"
+        logo: "#212B43",
+        correct: "#212b43",
+        incorrect: "#f794ca"
     },
     utils: {
         transitionSpeed: ".25s",

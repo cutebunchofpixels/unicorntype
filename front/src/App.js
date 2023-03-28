@@ -28,7 +28,8 @@ grid-template-rows: auto 1fr;
 const SetThemeContext = createContext(null);
 
 function App() {
-  const [theme, setTheme] = useState(themes[0]);
+  const choosenTheme = JSON.parse(localStorage.getItem("theme"));
+  const [theme, setTheme] = useState(choosenTheme || themes[0]);
 
   return (
     <ThemeProvider theme={theme}>

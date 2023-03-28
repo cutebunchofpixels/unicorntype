@@ -37,12 +37,12 @@ const ThemeOption = ({ theme }) => {
   const setCurrentTheme = useContext(SetThemeContext);
 
   return (
-    <Wrapper onClick={() => setCurrentTheme(theme)}>
+    <Wrapper onClick={() => {
+      setCurrentTheme(theme);
+      localStorage.setItem("theme", JSON.stringify(theme));
+    }}>
       <div>{theme.name}</div>
       <ThemePreview bgColor={theme.colors.bg}>
-        {/* {Object.entries(theme.colors).map((c) => {
-          return (c[0] !== "bg") && <ThemeIcon $color={c[1]} key={c[0]} />
-        })} */}
         {previewColors.map(c => {
           return <ThemeIcon $color={theme.colors[c]} key={c} />
         })}

@@ -5,6 +5,7 @@ const Wrapper = styled.div`
 font-size: 1.5rem;
 position: absolute;
 top: -1em;
+color: ${props => props.theme.colors.accent}
 `
 
 const Timer = ({ seconds }) => {
