@@ -20,7 +20,7 @@ const Global = createGlobalStyle`
 `
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/unicorntype/',
     element: <App />,
     errorElement: <ErrorPage />,
     children: [
