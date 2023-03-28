@@ -48,7 +48,7 @@ border-radius: ${props => props.theme.utils.roundness};
 animation: ${props => props.animationFrames} 1s linear infinite;
 `
 
-const TextLine = ({ text, active, lineIndex, setLineIndex }) => {
+const TextLine = ({ text, active, lineIndex, setLineIndex, typingStats }) => {
   const charsRef = useRef(null);
   const inputRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -97,9 +97,11 @@ const TextLine = ({ text, active, lineIndex, setLineIndex }) => {
 
     if (typedChar === currentLetterNode.innerHTML) {
       currentLetterNode.classList.add("correct");
+      typingStats.current.correct += 1;
     }
     else {
       currentLetterNode.classList.add("incorrect");
+      typingStats.current.incorrect += 1;
     }
 
     setCurrentIndex(currentIndex + 1);
@@ -110,6 +112,8 @@ const TextLine = ({ text, active, lineIndex, setLineIndex }) => {
       setLineIndex(lineIndex + 1);
       resetLine();
     }
+
+    typingStats.current.typed += 1;
   }
 
   if (active) {

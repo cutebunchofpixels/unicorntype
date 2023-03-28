@@ -28,7 +28,7 @@ function getCharacterCount(fontSize) {
 
 const LOAD_LINES = 10;
 
-const TestField = ({ testState, setTestState, duration }) => {
+const TestField = ({ testState, setTestState, duration, typingStats }) => {
   let testStateTimeout = useRef();
   const [lineCharactersCount, setLineCharactersCount] = useState(0);
   const [lineIndex, setLineIndex] = useState(0);
@@ -41,14 +41,23 @@ const TestField = ({ testState, setTestState, duration }) => {
       if (count !== lineCharactersCount) {
         setTestState(0);
         clearTimeout(testStateTimeout.current);
+
+        typingStats.current = {
+          typed: 0,
+          correct: 0,
+          incorrect: 0
+        }
+
         testStateTimeout.current = null;
         setLineCharactersCount(count);
         setTextLines(TextService.getLines(LOAD_LINES, count));
       }
     };
+
     const throttled = throttle(handleResize, 50);
     window.addEventListener("resize", throttled);
     handleResize();
+
     return () => window.removeEventListener("resize", throttled);
   }, [lineCharactersCount]);
 
@@ -68,6 +77,7 @@ const TestField = ({ testState, setTestState, duration }) => {
             active={testState}
             lineIndex={lineIndex}
             setLineIndex={setLineIndex}
+            typingStats={typingStats}
           />
           <div>{textLines[lineIndex + 1]}</div>
           <div>{textLines[lineIndex + 2]}</div>

@@ -1,8 +1,6 @@
 import MenuLink from "./MenuLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faKeyboard } from "@fortawesome/free-solid-svg-icons";
-import { faInfo } from "@fortawesome/free-solid-svg-icons";
-import { faScrewdriverWrench } from "@fortawesome/free-solid-svg-icons";
 import { faPalette } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 import IconButton from "../button/IconButton";
@@ -12,7 +10,7 @@ import ThemePicker from "../ThemePicker/ThemePicker";
 
 const Wrapper = styled.div`
 display: grid;
-grid-template-columns: auto auto 1fr auto;
+grid-template-columns: 1fr auto;
 justify-content: start;
 column-gap: 1.5em;
 `
@@ -24,12 +22,6 @@ const Menu = () => {
         <Wrapper>
             <MenuLink to="/">
                 <FontAwesomeIcon icon={faKeyboard} />
-            </MenuLink>
-            <MenuLink to="/about">
-                <FontAwesomeIcon icon={faInfo} />
-            </MenuLink>
-            <MenuLink to="/settings">
-                <FontAwesomeIcon icon={faScrewdriverWrench} />
             </MenuLink>
             <IconButton onClick={() => setThemePickerVisible(true)}>
                 <FontAwesomeIcon icon={faPalette}/>
