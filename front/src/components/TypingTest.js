@@ -8,6 +8,7 @@ display: flex;
 flex-direction: column;
 position: relative;
 `
+const DURATION = 30;
 
 const TypingTest = () => {
   const [testState, setTestState] = useState(0);
@@ -17,7 +18,7 @@ const TypingTest = () => {
       ? <TestField 
       testState={testState}
       setTestState={setTestState}
-      duration={15}/>
+      duration={DURATION}/>
       : <TestFinished />}
     </TestWrapper>
   )
