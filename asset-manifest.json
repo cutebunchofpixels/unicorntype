@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/unicorntype/static/js/main.02ab6044.js",
+    "main.js": "/unicorntype/static/js/main.0f38b307.js",
     "index.html": "/unicorntype/index.html",
-    "main.02ab6044.js.map": "/unicorntype/static/js/main.02ab6044.js.map"
+    "main.0f38b307.js.map": "/unicorntype/static/js/main.0f38b307.js.map"
   },
   "entrypoints": [
-    "static/js/main.02ab6044.js"
+    "static/js/main.0f38b307.js"
   ]
 }
