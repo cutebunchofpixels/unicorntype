@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import themes from "../../../utils/Themes/themes";
+import themes from "../../../utils/themes";
 import CustomInput from "../input/CustomInput";
 import ThemeOption from "./ThemeOption.js"
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";

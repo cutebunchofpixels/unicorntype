@@ -20,7 +20,7 @@ const Menu = () => {
 
     return (
         <Wrapper>
-            <MenuLink to="/">
+            <MenuLink to="/unicorntype">
                 <FontAwesomeIcon icon={faKeyboard} />
             </MenuLink>
             <IconButton onClick={() => setThemePickerVisible(true)}>

@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import styled from "styled-components";
 import { SetThemeContext } from "../../../App";
-import { previewColors } from "../../../utils/Themes/themes";
+import { previewColors } from "../../../utils/themes";
 
 const Wrapper = styled.div`
 display: grid;

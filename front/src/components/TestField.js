@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 import Timer from "./Timer";
 import { useEffect, useRef, useState } from "react";
-import TextService from "./API/TextService";
+import TextService from "../API/TextService";
 import throttle from "../utils/throttle";
 
 const TextWrapper = styled.div`

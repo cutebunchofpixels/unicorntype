@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
 import { createContext, useState } from "react";
-import themes from "./utils/Themes/themes";
+import themes from "./utils/themes";
 import Navbar from "./components/UI/Navbar";
 
 const Container = styled.div`
